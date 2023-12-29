@@ -1,20 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
 .logo.yew:hover {
   filter: drop-shadow(0 0 2em #20a88a);
 }
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
 
-  color: #0f0f0f;
-  background-color: #f6f6f6;
+  color: black;
+  background-color: white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.border-text {
+  /* text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, */
+  /*              1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff; */
+  text-shadow: 0 0 5px white;
+  -webkit-text-stroke: 1px white;
+  -webkit-text-fill-color: black;
+}
+
+.big-card {
+  position: relative;
+  width: 100vmin;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-size: 100% 100%;
+  box-shadow: inset 6rem 0 6rem white, inset -6rem 0 6rem white;
+}
+
+.big-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff9;
+  z-index: 1;
+}
+
+.big-card > * {
+  z-index: 2;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: inset 0 0 5px white, inset 0 0 10px white, inset 0 0 20px white, inset 0 0 30px white, inset 0 0 40px white;
+  background-size: 100% 100%;
+  padding-bottom: 10px;
+  position: relative;
+  gap: 10px;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff9;
+  z-index: 1;
+}
+
+.card > * {
+  z-index: 2;
+}
+
+.card > img {
+  max-width: 90px;
+  aspect-ratio: 1 /1;
+}
+
+.card > span {
+  font-weight: 600;
 }
 
 .container {
@@ -92,21 +173,4 @@ button {
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    color: #f6f6f6;
-    background-color: #2f2f2f;
-  }
-
-  a:hover {
-    color: #24c8db;
-  }
-
-  input,
-  button {
-    color: #ffffff;
-    background-color: #0f0f0f98;
-  }
-  button:active {
-    background-color: #0f0f0f69;
-  }
 }
