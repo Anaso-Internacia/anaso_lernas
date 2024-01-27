@@ -2,30 +2,150 @@
   words: {
     "unu": (
       image: ["15df482a-9fd6-4ee2-c613-40e2447d0300"],
+      misses: [
+        "uno",
+        "du",
+        "ejn",
+        "un",
+      ]
     ),
     "du": (
       image: ["b247a8ec-4313-40c9-f8ae-73c98069f200"],
+      misses: [
+        "tu",
+        "dos",
+        "cu",
+        "kvin",
+      ],
     ),
     "tri": (
       image: ["b1825444-b55c-4f39-230f-29daab46be00"],
+      misses: [
+        "tres",
+        "drej",
+        "tŭa",
+      ]
     ),
     "kvar": (
       image: ["1b316f54-ccb4-4cd6-516a-82d2a0623500"],
+      misses: [
+        "var",
+        "for",
+        "vir",
+        "kvat",
+      ]
     ),
     "kvin": (
       image: ["72e8cd3d-cf24-4366-eb06-5dd74d8c1e00"],
+      misses: [
+        "cinko",
+        "cink",
+        "fev",
+        "funf",
+      ]
     ),
     "ses": (
       image: ["adf068b4-98b2-4816-857c-cb0993c78600"],
+      misses: [
+        "sis",
+        "sejs",
+        "seks",
+        "naŭ",
+      ]
     ),
     "sep": (
       image: ["420060d0-8ca2-46ea-9911-b59bc759df00"],
+      misses: [
+        "siet",
+        "sept",
+        "sit",
+        "tri",
+      ]
     ),
     "ok": (
       image: ["4b64fcfa-5f49-44ea-dea5-cde0b91f9c00"],
+      misses: [
+        "ejt",
+        "okt",
+        "oĉo",
+        "at",
+      ],
     ),
     "naŭ": (
       image: ["d3ff4f30-b23e-43d6-3501-c16bb66eef00"],
+      misses: [
+        "ses",
+        "nun",
+        "nuv",
+        "ok",
+      ]
+    ),
+
+    "ruĝa": (
+      image: ["1ef343dc-b685-4388-b802-6c6ffebcf300"],
+      misses: [
+        "roha",
+        "reda",
+        "rota",
+      ]
+    ),
+    "oranĝa": (
+      image: ["0437ea12-a7f7-4313-9545-6ca32dbd3400"],
+      misses: [
+        "naranha",
+      ]
+    ),
+    "flava": (
+      image: ["1916ea8d-eca4-4e9d-d01d-525b1fba8a00"],
+      misses: [
+        "jela",
+        "gelba",
+        "amerila",
+      ]
+    ),
+    "verda": (
+      image: ["c10fa19b-7303-48f6-900d-0ee637eee900"],
+      misses: [
+        "gruna",
+        "grina",
+        "verta",
+      ],
+    ),
+    "blua": (
+      image: ["2214e017-9ba6-454a-093f-fe7b7887d500"],
+      misses: [
+        "bleŭa",
+        "azula",
+        "blaŭa",
+      ]
+    ),
+    "purpura": (
+      image: ["df7ead68-9b8f-4cbb-e816-d878f5424500"],
+      alt: [
+        "violkolora",
+      ],
+      misses: [
+        "lila",
+      ],
+    ),
+    "nigra": (
+      image: ["58e150b5-d8f3-422e-0c6c-89fdc95a0300"],
+      misses: [
+        "negra",
+        "nojra",
+        "noara",
+        "ŝvarza",
+      ]
+    ),
+    "blanka": (
+      image: ["dbe0266f-8f26-429e-c7c2-1e1728662300"],
+      misses: [
+        "hŭajt",
+        "vejsa",
+      ]
+    ),
+    "bruna": (
+      image: ["53915cb5-e749-4970-93b4-bd3856b3c000"],
     ),
 
     "abelo": (
@@ -40,6 +160,10 @@
     ),
     "ajlo": (
       image: ["30b35468-5fc7-4301-a14d-427e063c7d00"],
+      misses: [
+        "garlo",
+        "knoblako",
+      ]
     ),
     "akvofalo": (
       image: ["ac4f3fba-0bbe-4df0-c61c-226b5fcd9400"],
@@ -49,12 +173,23 @@
     ),
     "ananaso": (
       image: ["7f255d10-6bbf-4619-541c-faa6c1347800"],
+      misses: [
+        "pinpomo",
+        "arbopomo",
+        "pinjo",
+      ]
     ),
     "anaso": (
       image: [
         "4eec4197-88de-4315-0a50-952817aa8500",
         "392a1227-cca4-40f9-03ab-b0f5551a4f00",
       ],
+      misses: [
+        "duck",
+        "Dio",
+        "ananaso",
+        "pato",
+      ]
     ),
     "Anglio": (
       image: ["ab8038a3-330c-4904-de97-aa95280f9d00"],
@@ -66,6 +201,10 @@
       image: [
         "ab9d7a9f-d00d-44f9-089b-a448ccbad400",
         "d6e54091-b0f7-4a63-3f88-a433546bc000",
+      ],
+      misses: [
+        "handelo",
+        "knobo",
       ],
     ),
     "antilopo": (
@@ -80,12 +219,27 @@
     ),
     "araneo": (
       image: ["c728ef06-9e26-4b5c-aa83-65aba0663400"],
+      misses: [
+        "arakno",
+        "spino",
+        "spidro",
+      ]
     ),
     "arbaro": (
       image: ["548d190a-57d2-44c9-4255-88756ca4af00"],
+      misses: [
+        "valdo",
+        "foreto",
+        "bosko",
+      ]
     ),
     "arbo": (
       image: ["7f9773b2-ba32-416e-8a2e-778e07a9c000"],
+      misses: [
+        "saplo",
+        "arbolo",
+        "baŭmo",
+      ]
     ),
     "armeo": (
       image: ["75cb8c58-356d-4f90-dd22-ab88166cc500"],
@@ -95,15 +249,32 @@
     ),
     "aviadilo": (
       image: ["99282124-5950-4fdb-c3e5-b26a76b76700"],
+      misses: [
+        "pleno",
+        "aviono",
+        "flugzugo",
+      ]
     ),
     "avokado": (
       image: ["f2072be8-15df-4387-0c71-d15e4b7abb00"],
+      misses: [
+        "palto",
+      ]
     ),
     "aŭskultilo": (
       image: ["62a1c600-14db-41a3-89c6-4b2e0e236600"],
+      misses: [
+        "kapfono",
+        "abhorgato",
+      ]
     ),
     "aŭto": (
       image: ["f1cf8ce6-7f60-49e9-762c-63be3758c900"],
+      misses: [
+        "karo",
+        "vageno",
+        "koĉo",
+      ]
     ),
     "aŭtobuso": (
       image: ["128b764a-5557-4a9b-9846-1f5f1f24fc00"],
@@ -111,42 +282,84 @@
 
     "balailo": (
       image: ["ebe793f7-7706-4dd6-9014-7f96b01dfb00"],
+      misses: [
+        "brumo",
+        "eskobo",
+        "eskilo",
+        "beseno",
+      ]
     ),
     "balono": (
       image: ["b472f5e6-fc51-4bf8-2436-aaebf3968100"],
+      misses: [
+        "baluno",
+        "globo",
+      ]
     ),
     "banano": (
       image: ["3e413229-29ca-4069-42b1-bae6f9a9f400"],
     ),
     "Barato": (
       image: ["20204b86-436e-4740-b817-24f044cfdd00"],
+      misses: [
+        "Indio",
+        "Intujo",
+      ]
     ),
     "barelo": (
       image: ["c09a11c9-dace-4bfd-ba81-4ec698d3c700"],
+      misses: [
+        "bungo",
+        "faso",
+      ]
     ),
     "barilo": (
       image: ["25229e58-1abd-4be7-2fa2-d6a5d52f3c00"],
+      misses: [
+        "fenco",
+        "kloturo",
+        "kerco",
+      ]
     ),
     "bastono": (
       image: ["76f00f04-53f5-42be-e6b1-606c6323ab00"],
+      misses: [
+        "stiko",
+      ]
     ),
     "batalŝipo": (
       image: ["732ca1b3-539d-4c4d-330f-e8a470b7ff00"],
     ),
     "bebo": (
       image: ["f635b484-ddc7-4acc-c2ce-8ec51b13b900"],
+      misses: [
+        "bebeo",
+        "bebio",
+      ]
     ),
     "benko": (
       image: ["2eb8fd81-c3cf-4a13-bdb3-deb04ad7f400"],
+      misses: [
+        "benĉo",
+      ]
     ),
     "bestkuracisto": (
       image: ["1ca19a34-4f19-4c38-e5f8-b76efbc2c300"],
+      misses: [
+        "veterinisto",
+      ]
     ),
     "beto": (
       image: ["5d14a0e2-ecbd-4a21-882b-d46b06b34500"],
+      misses: [
+        "bito",
+      ]
     ),
     "biblio": (
       image: ["3a763e6a-371c-474d-5796-6ff3210f8f00"],
+      misses: [
+        "bibelo",
+      ]
     ),
     "biblioteko": (
       image: ["4daa6868-4c91-4f11-25e2-3c9812feec00"],
@@ -160,28 +373,38 @@
     ),
     "biero": (
       image: ["5c44c6fc-9052-4a4c-59b6-05291eb62f00"],
+      misses: [
+        "cervezo",
+        "biro",
+      ]
     ),
     "bifsteko": (
       image: ["045d6c8c-a768-4347-96c0-0319ea795100"],
+      misses: [
+        "bovsteko",
+        "stejko",
+      ]
     ),
     "bileto": (
       image: ["5110eba1-6b2e-4dff-5e52-6c01a08eec00"],
+      misses: [
+        "farkarto",
+        "boledo",
+      ]
     ),
     "birdo": (
       image: ["3e5497e9-7c1b-43ec-6489-746c47088c00"],
+      misses: [
+        "paharo",
+        "vogelo",
+      ]
     ),
     "biskvito": (
       image: ["a5e7148f-46dc-4ea2-b616-c19ea1326000"],
-    ),
-    "blanka": (
-      image: ["dbe0266f-8f26-429e-c7c2-1e1728662300"],
-    ),
-    "blua": (
-      image: ["2214e017-9ba6-454a-093f-fe7b7887d500"],
       misses: [
-        "bleŭa",
-        "azula",
-        "blaŭa",
+        "kukuko",
+        "kekso",
+        "gajeto",
       ]
     ),
     "boato": (
@@ -198,49 +421,97 @@
         "pavo",
         "bolojro",
         "kroĉero",
-      ]
+      ],
     ),
     "bombono": (
       image: ["cb251fe7-c5f0-42ce-c130-d1e8f106a500"],
+      alt: [
+        "dolĉaĵo",
+      ],
+      misses: [
+        "kando",
+        "susikeno",
+      ]
     ),
     "botelo": (
       image: ["8629fa09-8659-40f4-4b7c-15bff423fc00"],
+      misses: [
+        "flaŝko",
+      ]
     ),
     "boto": (
       image: ["a1a569a2-23b1-43e4-7501-2a24ccb40a00"],
+      misses: [
+        "buto",
+      ]
     ),
     "bovino": (
       image: ["0778af3e-ab5b-4a8f-232f-7b3fb137f600"],
+      misses: [
+        "kuho",
+        "vaĉo",
+        "vako",
+      ]
     ),
     "bovlo": (
       image: ["99d0802f-1954-43a4-4e3e-20b49c155a00"],
+      misses: [
+        "tazono",
+        "bolo",
+        "ŝuselo",
+      ]
     ),
     "brakhorloĝo": (
       image: ["4099acfd-a866-45e4-535b-3aa5e500a400"],
+      misses: [
+        "vatĉo",
+      ]
     ),
     "brako": (
       image: ["0e7b2ddc-a609-41f6-8309-e1209e2a1f00"],
+      misses: [
+        "armo",
+        "brazo",
+      ]
     ),
     "Brazilo": (
       image: ["21651565-4d5a-4c40-dbdc-b3a2c0d25100"],
     ),
     "breto": (
       image: ["4d506f7f-72ee-4b53-e72b-f0f8ace2bf00"],
+      misses: [
+        "ŝelfo",
+        "regalo",
+        "estanto",
+      ]
     ),
     "briko": (
       image: ["bdfbe45d-dd60-40b4-87d6-a5c4f24a7e00"],
+      misses: [
+        "zigelsto",
+        "ladrio",
+      ]
     ),
     "broso": (
       image: ["932d0551-5660-4525-0c8c-bccf0788eb00"],
-    ),
-    "bruna": (
-      image: ["53915cb5-e749-4970-93b4-bd3856b3c000"],
+      misses: [
+        "bruso",
+        "cepiho",
+      ]
     ),
     "buŝo": (
       image: ["4a3ac666-95a1-4c32-84f0-1f497d74e400"],
+      misses: [
+        "boko",
+        "mundo",
+        "maŭto",
+      ]
     ),
     "butero": (
       image: ["af8eda7e-84bd-4c1e-7ec2-d5c917e93f00"],
+      misses: [
+        "manteko",
+      ]
     ),
     "butono": (
       image: ["b468d0a9-0564-40f4-a1c9-65337e216f00"],
@@ -248,18 +519,38 @@
 
     "cepo": (
       image: ["f50420a8-e4a1-4027-2532-b1ec4225bf00"],
+      misses: [
+        "onjo",
+        "keboho",
+        "vibelo",
+      ]
     ),
     "cerbo": (
       image: ["a8c5a528-f71f-4046-b5ac-6fc08942d700"],
+      misses: [
+        "breno",
+        "neŭro",
+        "gehirno",
+        "ceribro",
+      ]
     ),
     "cigaro": (
       image: ["9e17aac1-33c5-47cd-037a-e3c325410200"],
     ),
     "cigno": (
       image: ["2aa0e380-c2e5-45d0-ca47-9969ab866000"],
+      misses: [
+        "ŝvano",
+        "sisno",
+      ]
     ),
     "cinamo": (
       image: ["c465ea02-cf33-4c90-1540-2f8b83158200"],
+      misses: [
+        "cinameno",
+        "kanelo",
+        "zimto",
+      ]
     ),
     "citrono": (
       image: ["562b74d5-cf15-4062-2534-fc6ea61c5a00"],
@@ -267,6 +558,11 @@
 
     "ĉapelo": (
       image: ["2a76892e-dfd3-4a2a-191f-9b6f5f090700"],
+      misses: [
+        "hato",
+        "kasketo",
+        "sombrero",
+      ],
       alt: [
         "ĉapo",
       ],
@@ -295,6 +591,12 @@
       alt: [
         "dio",
         "virdio",
+      ],
+      misses: [
+        "Godo",
+        "Goto",
+        "Diŭo",
+        "Dioso",
       ],
     ),
     "dezerto": (
@@ -362,18 +664,25 @@
     ),
     "fervojo": (
       image: ["e147852f-72dd-4375-1375-2b4404c23300"],
+      misses: [
+        "ejsenbano",
+        "trajtrako",
+      ]
     ),
     "fingrospuro": (
       image: ["c4a72f32-04b5-4fcf-ed32-4329972a6900"],
+      misses: [
+        "fingroprinto",
+        "fingrodruko",
+        "fingroprento",
+        "fingroŭelo",
+      ]
     ),
     "fiŝo": (
       image: ["2227b8e2-9c4b-474e-3ab4-4c3c30357c00"],
     ),
     "flago": (
       image: ["77b3eccc-09d9-4c52-b308-fab7d01fee00"],
-    ),
-    "flava": (
-      image: ["1916ea8d-eca4-4e9d-d01d-525b1fba8a00"],
     ),
     "floro": (
       image: ["e94382ae-4fc5-4c64-bb3a-e276fc996c00"],
@@ -385,6 +694,10 @@
     ),
     "flughaveno": (
       image: ["69dea00a-da75-4058-ddd5-5fae701e5300"],
+      misses: [
+        "aeroporto",
+        "fluĝhafeno",
+      ]
     ),
     "fluto": (
       image: ["330432a6-3a31-4471-7240-4e353c4fd200"],
@@ -419,9 +732,21 @@
         "bakujo",
         "bakforno",
       ],
+      misses: [
+        "flumo",
+        "horno",
+        "ofeno",
+        "oveno",
+      ]
     ),
     "fosilo": (
       image: ["761ba8da-78b0-497e-6524-ff972ac0f400"],
+      misses: [
+        "ŝovelo",
+        "spatilo",
+        "ŝovilo",
+        "espado",
+      ]
     ),
     "fotisto": (
       image: ["c8060c38-acd6-42f5-c37a-ad0b6fd82200"],
@@ -454,6 +779,10 @@
       alt: [
         "ĉampinjono",
       ],
+      misses: [
+        "muŝro",
+        "pilzo",
+      ]
     ),
 
     "ganto": (
@@ -464,6 +793,10 @@
     ),
     "Germanio": (
       image: ["47d965c2-fe27-454c-7308-baf414290a00"],
+      misses: [
+        "Dojĉlando",
+        "Deuĉlando",
+      ]
     ),
     "gitaro": (
       image: ["03133cf5-5624-4be5-c64c-8d4bf5116900"],
@@ -522,9 +855,19 @@
     ),
     "hundido": (
       image: ["500ceda4-0928-4afd-bbf4-a595985d7f00"],
+      misses: [
+        "pupo",
+        "hundbebo",
+        "velpo",
+        "ĉoro",
+      ]
     ),
     "hundo": (
       image: ["01922025-9cde-4c65-ec50-9ef331e95200"],
+      misses: [
+        "pero",
+        "ĉieno",
+      ]
     ),
 
     "instruisto": (
@@ -533,6 +876,11 @@
         "e417442b-0f96-4664-a70f-c3a7956a9d00",
         "afb079da-4919-43a4-55c6-9e6b31677900",
       ],
+      misses: [
+        "maestro",
+        "ensegnanto",
+        "lerero",
+      ]
     ),
     "insulo": (
       image: ["4150bc73-fb03-4104-d09b-431bf0ad2600"],
@@ -566,6 +914,12 @@
     ),
     "kakto": (
       image: ["9c4a8128-1de7-4027-32d7-814a97627700"],
+      misses: [
+        "kaktuso",
+        "kaktelo",
+        "kaktoso",
+        "kukuso",
+      ],
     ),
     "kalkulilo": (
       image: ["2b84e109-b0b8-4a92-5bf5-2d72c6059500"],
@@ -695,6 +1049,8 @@
       misses: [
         "komputero",
         "komputaro",
+        "ordenilo",
+        "ordenadoro",
       ],
     ),
     "kontaktingo": (
@@ -743,6 +1099,11 @@
     ),
     "kuracisto": (
       image: ["6a12f868-3050-4306-235f-b35fe7e91900"],
+      misses: [
+        "doktro",
+        "medecisto",
+        "arztisto",
+      ]
     ),
     "kurteno": (
       image: ["3937b80d-264a-4b6d-49b3-3b4973421b00"],
@@ -785,6 +1146,12 @@
     ),
     "libro": (
       image: ["ec1f68ab-489f-42b3-0ef1-621776518a00"],
+      misses: [
+        "biblo",
+        "buko",
+        "boko",
+        "livro",
+      ]
     ),
     "ligno": (
       image: [
@@ -803,12 +1170,21 @@
     ),
     "lupeo": (
       image: ["8a393462-6c60-4d6d-3a85-5dfc217e7b00"],
+      misses: [
+        "vidilo",
+        "grandilo",
+        "lupo",
+        "mangifilo",
+      ]
     ),
     "lupo": (
       image: [
         "170d8b4f-eda0-4782-fa6a-33726213e500",
         "7f8a8a41-9c14-4527-757b-c8f95bfd2300",
       ],
+      misses: [
+        "vulpo",
+      ]
     ),
 
     "manĝaĵo": (
@@ -861,6 +1237,11 @@
     ),
     "monto": (
       image: ["ccc71c90-fdb0-42da-732f-c8baaec6ac00"],
+      misses: [
+        "montano",
+        "bergo",
+        "maŭnto",
+      ]
     ),
     "mono": (
       image: ["65d5bcc3-8785-4b4e-2c28-4d534f15e200"],
@@ -869,6 +1250,9 @@
       image: [
         "13d424f9-989f-4c0c-87fc-ad05496bed00",
         "444dca66-a41e-4fa6-eb39-840c2d930400",
+      ],
+      misses: [
+        "monstero",
       ]
     ),
     "motorciklo": (
@@ -886,18 +1270,15 @@
     ),
     "necesejo": (
       image: ["6fe3d617-f39f-454e-3823-b31035b56000"],
+      misses: [
+        "banjo",
+        "tojleto",
+        "toledo",
+        "bano",
+      ]
     ),
     "neĝo": (
       image: ["89deccb1-3683-416a-1814-8a3d76c93c00"],
-    ),
-    "nigra": (
-      image: ["58e150b5-d8f3-422e-0c6c-89fdc95a0300"],
-      misses: [
-        "negra",
-        "nojra",
-        "noara",
-        "ŝvarza",
-      ]
     ),
     "nubo": (
       image: ["08962538-7b20-444a-ba87-e4b17f621700"],
@@ -927,9 +1308,6 @@
     "ombrelo": (
       image: ["b2401a72-f798-448c-5061-cb706b803500"],
     ),
-    "oranĝa": (
-      image: ["0437ea12-a7f7-4313-9545-6ca32dbd3400"],
-    ),
     "oranĝo": (
       image: ["dc1b88bf-bf2c-49a1-685d-f3cdfdca2400"],
     ),
@@ -948,6 +1326,10 @@
         "3492eeb8-40d6-467b-ad3b-6e4e35332800",
         "a6ce139e-7dae-4d8b-dce1-12f82cce2d00",
       ],
+      misses: [
+        "pantso",
+        "hoso",
+      ]
     ),
     "papilio": (
       image: ["46b9d93f-3425-480d-3ebf-0bfbfe78e400"],
@@ -965,6 +1347,7 @@
       image: ["879561bc-c043-414d-5133-e48839ab1700"],
       misses: [
         "poto",
+        "pano",
       ]
     ),
     "pavo": (
@@ -999,6 +1382,11 @@
     ),
     "pingveno": (
       image: ["5e48d2dc-b487-47a3-dcc1-1f7974dd5300"],
+      misses: [
+        "pinguino",
+        "pingŭino",
+        "pingŭeno",
+      ]
     ),
     "pipo": (
       image: ["e543e56d-cc01-4bbd-f5f1-afc1528dad00"],
@@ -1067,10 +1455,17 @@
       image: ["edcb89d2-edcd-442b-986b-79dbe5a09e00"],
       misses: [
         "porto",
+        "doro",
+        "turo",
       ],
     ),
     "porko": (
       image: ["71127eff-2a13-4e8c-9909-19d29fe40300"],
+      misses: [
+        "pigo",
+        "svino",
+        "kohono",
+      ]
     ),
     "poŝtkesto": (
       image: ["ede9f7f8-6c96-48a4-facc-eb577c6b5200"],
@@ -1089,12 +1484,6 @@
     ),
     "prociono": (
       image: ["49d0dde1-5b63-48cb-c485-89d48952c000"],
-    ),
-    "purpura": (
-      image: ["df7ead68-9b8f-4cbb-e816-d878f5424500"],
-      alt: [
-        "violkolora",
-      ],
     ),
 
     "radiatoro": (
@@ -1132,15 +1521,39 @@
     ),
     "razilo": (
       image: ["640dc9bc-bec6-4846-0ff1-6546cdae9600"],
+      misses: [
+        "ŝavilo",
+        "afetilo",
+        "resilo",
+        "trimilo",
+      ]
     ),
     "reĝino": (
       image: ["cb02c33c-95fc-490c-6d17-f34f2aa04b00"],
+      misses: [
+        "rejnino",
+        "konigino",
+        "rejno",
+        "kingino",
+      ]
     ),
     "reĝo": (
       image: ["35f91d94-1179-4fee-757c-db5a57e12b00"],
+      misses: [
+        "konigo",
+        "rejo",
+        "rojo",
+        "kingo",
+      ]
     ),
     "rektilo": (
       image: ["7414dbf7-588f-43db-f2ed-15537cd3c900"],
+      misses: [
+        "rulero",
+        "planĉo",
+        "lisuro",
+        "glateso",
+      ]
     ),
     "ridado": (
       image: ["197338fe-3ad9-4e1e-74ee-2b666a7db500"],
@@ -1150,20 +1563,43 @@
     ),
     "ringo": (
       image: ["b762d09a-395e-483f-9096-a1d44556b000"],
+      misses: [
+        "rongo",
+        "aneo",
+        "anio",
+        "aneŭo",
+      ]
     ),
     "rinocero": (
       image: ["d18b3377-8631-4351-5070-3626d6867200"],
     ),
     "rivero": (
       image: ["7ecdbe49-8c39-41b0-b04b-93512c5e3300"],
+      misses: [
+        "rivro",
+        "fluso",
+        "rio",
+        "riviero",
+      ]
     ),
     "rizo": (
       image: ["791f1734-14c7-4812-90e0-71c250f46400"],
+      misses: [
+        "arozo",
+        "arizo",
+        "rejso",
+        "rajso",
+      ]
     ),
     "robo": (
       image: [
         "315a67ae-3dfa-41f8-b375-72a7ff046500",
         "40a0b5aa-1439-41de-05b7-a0c9e5142a00",
+      ],
+      misses: [
+        "dreso",
+        "vestido",
+        "klejdo",
       ],
     ),
     "roboto": (
@@ -1171,18 +1607,28 @@
     ),
     "roko": (
       image: ["97a0ca3a-a5ec-497d-c567-f74dda4fa500"],
+      misses: [
+        "stejno",
+        "roŝero",
+      ]
     ),
     "rozo": (
       image: ["a7b887cd-5774-48ae-c627-66081cfd8f00"],
+      misses: [
+        "roso",
+      ],
     ),
     "rubo": (
       image: ["bb23715a-e266-4d68-7885-c24f2566e600"],
+      misses: [
+        "garbaĝo",
+        "basuro",
+        "deŝedo",
+        "mulo",
+      ]
     ),
     "rubujo": (
       image: ["eb4ceee1-d13d-4ce7-c8fd-9508f2b21500"],
-    ),
-    "ruĝa": (
-      image: ["1ef343dc-b685-4388-b802-6c6ffebcf300"],
     ),
     "rulŝtuparo": (
       image: ["1178232a-17e8-453e-ad93-80dfe44e4100"],
@@ -1190,15 +1636,30 @@
 
     "sako": (
       image: ["61b47630-63cb-4c4f-f41e-92cbbe34b200"],
+      misses: [
+        "bago",
+        "bolso",
+        "sago",
+      ]
     ),
     "salato": (
       image: ["78cf79b5-a3da-4f68-b76c-4d4b23bb3700"],
+      misses: [
+        "salado",
+        "ensalado",
+      ]
     ),
     "sandviĉo": (
       image: ["ad900b6a-a433-4552-c4a4-b766d0699b00"],
     ),
     "sapo": (
       image: ["41d2da69-98ed-4748-3291-bd20b1cadd00"],
+      misses: [
+        "sopo",
+        "supo",
+        "habono",
+        "savono",
+      ]
     ),
     "sciuro": (
       image: ["be42f2be-7ff4-426a-c099-29846d9cb000"],
@@ -1211,21 +1672,45 @@
     ),
     "simio": (
       image: ["d77cae32-5f7b-464a-8390-0fba2049ff00"],
+      misses: [
+        "mono",
+        "monko",
+        "singo",
+      ]
     ),
     "sitelo": (
       image: ["d048ec11-d53a-4d65-1e14-94de65929a00"],
+      misses: [
+        "baldo",
+        "seŭo",
+        "ejmero",
+        "buketo",
+      ]
     ),
     "skatolo": (
       image: ["6fed95e4-184a-4dcf-b5c8-c7750b960600"],
+      misses: [
+        "bokso",
+        "kaho",
+        "bojto",
+        "boso",
+      ]
     ),
     "skeleto": (
       image: ["0efde075-7572-4c41-7137-f3ceff4f3600"],
     ),
     "sofo": (
       image: ["04dfeac2-b245-485d-9c01-3aa528f49700"],
+      misses: [
+        "kanapeo",
+        "kaŭĉo",
+      ]
     ),
     "soldato": (
       image: ["68956662-77c1-45e6-cb72-aefd386e9800"],
+      misses: [
+        "soldero",
+      ]
     ),
     "sonorilo": (
       image: ["b12b2f36-d839-4583-2645-062bc289c800"],
@@ -1251,6 +1736,11 @@
     ),
     "Svislando": (
       image: ["fe72ccc2-1c21-49a4-759d-b9ac0ba45100"],
+      misses: [
+        "Ŝvejslando",
+        "Sŭisio",
+        "Svisio",
+      ]
     ),
     "subĉemizo": (
       image: [
@@ -1260,6 +1750,10 @@
     ),
     "sukero": (
       image: ["3380fb16-ed00-449f-d856-54cf7bfb6700"],
+      misses: [
+        "azukaro",
+        "sukro",
+      ]
     ),
     "suno": (
       image: ["42dc4da0-b2d3-43c0-ea82-e56c4b0b3300"],
@@ -1276,9 +1770,21 @@
 
     "ŝafo": (
       image: ["c1b3b0df-d7ad-473a-8222-dbf0df5f6d00"],
+      misses: [
+        "mutono",
+        "oveho",
+        "ŝipo",
+        "ŝepo",
+      ]
     ),
     "ŝalmo": (
       image: ["e13b13e5-4a39-4fe9-ebb2-4bff84538000"],
+      misses: [
+        "straŭo",
+        "suĉo",
+        "paho",
+        "strohalmo",
+      ]
     ),
     "ŝaltilo": (
       image: ["c74e9c91-5aea-4c3c-d689-8c2f79300300"],
@@ -1368,9 +1874,19 @@
     ),
     "tomato": (
       image: ["c163e597-3d75-4cb1-7e39-8a406e826800"],
+      misses: [
+        "pomodoro",
+        "tometeo",
+      ]
     ),
     "tondilo": (
       image: ["ec6e8509-7881-404a-0608-987765aece00"],
+      misses: [
+        "sizo",
+        "tihero",
+        "ciso",
+        "ŝero",
+      ]
     ),
     "torĉo": (
       image: ["64514a36-ad64-42ab-1acc-1ea4ad6c1400"],
@@ -1400,27 +1916,54 @@
     ),
     "truo": (
       image: ["9d418d81-da6f-48ab-c32b-22ff1eb2a700"],
+      misses: [
+        "holo",
+        "loko",
+        "agujero",
+      ],
     ),
     "tuko": (
       image: ["096d87c7-1007-4be0-990a-7317d4d94400"],
+      misses: [
+        "toajo",
+        "toŭelo",
+        "vetemento",
+      ],
     ),
     "tunelo": (
       image: ["6446dd3a-6aae-4f0a-8b46-8daec95f5700"],
+      misses: [
+        "tudalo",
+      ]
     ),
     "turo": (
       image: ["6f7ef644-a202-4cd0-062d-fccc98498d00"],
+      misses: [
+        "taŭro",
+        "turmo",
+        "toro",
+      ]
     ),
 
     "Usono": (
       image: ["12dce1ae-7872-401b-7ce9-5f117fc5c700"],
+      misses: [
+        "Ameriko",
+        "Etatuniso",
+      ]
     ),
     "urbo": (
       image: ["a906c867-eea8-443e-6d2e-40da45e6d900"],
+      misses: [
+        "ciudo",
+        "cito",
+        "stato",
+      ],
     ),
     "urso": (
       image: ["4d8475d8-9a7a-40bb-7f3b-ded680289d00"],
       misses: [
-        "urbo",
+        "bero",
         "uro",
         "urco",
       ]
@@ -1428,20 +1971,24 @@
 
     "vampiro": (
       image: ["70f91a12-e04e-47e8-5ec2-f02389da9100"],
+      misses: [
+        "vampro",
+      ]
     ),
     "ventmuelilo": (
       image: ["c4dc3326-7c2a-4871-0d1f-003bc4ac3300"],
-    ),
-    "verda": (
-      image: ["c10fa19b-7303-48f6-900d-0ee637eee900"],
       misses: [
-        "gruna",
-        "grina",
-        "verta",
+        "vindmulo",
+        "molino",
       ],
     ),
     "vespo": (
       image: ["a3874187-98dc-475c-cc23-962d8c38b200"],
+      misses: [
+        "vaspo",
+        "gupo",
+        "avispo",
+      ],
     ),
     "vestaĵo": (
       image: ["59a6c8d6-1e97-479c-2b2c-e535e61bf400"],
@@ -1479,6 +2026,9 @@
     ),
     "vulpo": (
       image: ["458a8121-5672-4f8d-1631-238593f4a600"],
+      misses: [
+        "lupo",
+      ]
     ),
 
     "zombio": (

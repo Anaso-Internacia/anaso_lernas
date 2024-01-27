@@ -1,9 +1,11 @@
 use yew::prelude::*;
 
+use crate::{get_img_url, ImageVariant};
+
 #[derive(Debug, PartialEq, Hash)]
 pub enum TextOrImage {
     Text(AttrValue),
-    Image(AttrValue),
+    Image(&'static str),
 }
 #[derive(Properties, PartialEq)]
 pub struct Props {
@@ -32,7 +34,7 @@ pub fn FullSquare(props: &Props) -> Html {
                         style="width: 50vmin; height: 50vmin; display: flex; justify-content: center; align-items: center;"
                         onclick={let on_select = on_select.clone(); move |_| on_select.emit(i)}
                     >
-                        <span>{t}</span>
+                        <span style="font-size: 6vmin; cursor: pointer;">{t}</span>
                     </div>
                 }
             }
@@ -44,8 +46,9 @@ pub fn FullSquare(props: &Props) -> Html {
                 };
                 html! {
                     <img
-                        src={t}
-                        style={["width: 50vmin; height: 50vmin; transition: filter 0.2s linear;", e].concat()}
+                        key={*t}
+                        src={get_img_url(t, ImageVariant::FourFour)}
+                        style={["width: 50vmin; height: 50vmin; cursor: pointer; transition: filter 0.1s linear;", e].concat()}
                         onclick={let on_select = on_select.clone(); move |_| on_select.emit(i)}
                     />
                 }
@@ -53,23 +56,29 @@ pub fn FullSquare(props: &Props) -> Html {
         })
         .collect::<Html>();
 
-    let center = match center {
-        TextOrImage::Text(t) => {
+    let (center, bg) = match center {
+        TextOrImage::Text(t) => (
             html! {
-                <span style="color: black; font-size: 6vmin; font-weight: 600;" class="border-text">{t}</span>
-            }
-        }
-        TextOrImage::Image(t) => {
+                <span style="color: black; font-size: 7vmin; font-weight: 600;" class="border-text">{t}</span>
+            },
+            String::new(),
+        ),
+        TextOrImage::Image(t) => (
             html! {
-                <img src={t} style="width: 40vmin; height: 40vmin;" />
-            }
-        }
+                <img
+                    key={*t}
+                    src={get_img_url(t, ImageVariant::FourFour)}
+                    style="width: 40vmin; height: 40vmin;"
+                />
+            },
+            get_img_url(t, ImageVariant::ThumbnailBackdrop),
+        ),
     };
 
     html! {
-        <div style="margin:auto; width: 100vmin; height: 100vmin; position: relative; display: grid; grid-template-columns: repeat(2, 1fr);">
+        <div class="full-square" style={format!("background-image: url({})", bg)}>
             {corners}
-            <div style="position: fixed; pointer-events: none; top: 0; bottom: 0; left: 0; right: 0; display: flex; justify-content: center; align-items: center;">
+            <div style="position: absolute; pointer-events: none; top: 0; bottom: 0; left: 0; right: 0; display: flex; justify-content: center; align-items: center;">
                 {center}
             </div>
         </div>

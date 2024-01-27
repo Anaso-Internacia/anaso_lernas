@@ -64,7 +64,8 @@ pub fn app() -> Html {
             target={target}
             fakes={fakes}
             on_success={let difficulty = difficulty.clone(); Callback::from(move |_| {difficulty.set(*difficulty + 1)})}
-            difficulty={*difficulty}
+            // difficulty={*difficulty % 6}
+            difficulty={3}
         />
     }
 }

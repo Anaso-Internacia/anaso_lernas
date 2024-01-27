@@ -1,11 +1,12 @@
+use std::{collections::BTreeMap, ops::Deref};
+
+use serde::Deserialize;
+
+use crate::app::App;
+
 mod app;
 mod components;
 mod hooks;
-
-use std::collections::BTreeMap;
-
-use app::App;
-use serde::Deserialize;
 
 #[derive(Clone, Debug, Deserialize)]
 struct WordData<'a> {

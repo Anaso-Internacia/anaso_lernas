@@ -1,11 +1,16 @@
 pub use yew::prelude::*;
 
-use crate::{components::challenge::select_image::SelectImage, WordData, WordSet};
+use crate::{WordData, WordSet};
 
 use big_card::BigCard;
+use select_image::SelectImage;
+use select_text::SelectText;
+use spell_letters::SpellLetters;
 
 mod big_card;
 mod select_image;
+mod select_text;
+mod spell_letters;
 
 #[derive(Properties, PartialEq)]
 pub struct Props {
@@ -39,25 +44,33 @@ pub fn Challenge(props: &Props) -> Html {
         }
         2 => {
             // Image in middle, words in corners
-            html! {}
+            html! {
+                <SelectText target={*target} fakes={*fakes} on_success={on_success} use_misses={false} />
+            }
         }
         3 => {
             // Image in middle, words in corners
             // This time with challenge words
-            html! {}
+            html! {
+                <SelectText target={*target} fakes={*fakes} on_success={on_success} use_misses={true} />
+            }
         }
         4 => {
             // Spell the word with a letter bank
-            html! {}
+            html! {
+                <SpellLetters word={target.0} data={target.1} on_success={on_success.clone()} extra_letters={0} />
+            }
         }
         _ => {
             // Spell the word without a letter bank
-            html! {}
+            html! {
+                <SpellLetters word={target.0} data={target.1} on_success={on_success.clone()} extra_letters={1} />
+            }
         }
     };
 
     html! {
-        <div style="width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
             {challenge}
         </div>
     }

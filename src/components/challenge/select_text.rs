@@ -1,3 +1,4 @@
+use implicit_clone::unsync::IString;
 use rand::{seq::SliceRandom, thread_rng};
 use yew::prelude::*;
 
@@ -12,14 +13,16 @@ use crate::{
 pub struct Props {
     pub target: WordSet,
     pub fakes: [WordSet; 3],
+    pub use_misses: bool,
     pub on_success: Callback<usize>,
 }
 
 #[function_component]
-pub fn SelectImage(props: &Props) -> Html {
+pub fn SelectText(props: &Props) -> Html {
     let Props {
         target,
         fakes,
+        use_misses,
         on_success,
     } = props;
 
@@ -37,12 +40,20 @@ pub fn SelectImage(props: &Props) -> Html {
 
     let (correct, full_sort) = use_shuffled_words(*target, *fakes);
 
-    let corners: [TextOrImage; 4] = full_sort
+    let mut corners: [TextOrImage; 4] = full_sort
         .iter()
-        .map(|w| TextOrImage::Image(w.1.image[0]))
+        .map(|w| TextOrImage::Text(w.0.into()))
         .collect::<Vec<_>>()
         .try_into()
         .unwrap();
+
+    if *use_misses {
+        for (i, miss) in target.1.misses.iter().enumerate().take(4) {
+            if i != correct {
+                corners[i] = TextOrImage::Text(IString::Static(miss));
+            }
+        }
+    }
 
     let on_select = Callback::from({
         let on_success = on_success.clone();
@@ -58,10 +69,9 @@ pub fn SelectImage(props: &Props) -> Html {
             }
         }
     });
-
     html! {
         <FullSquare
-            center={TextOrImage::Text(target.0.into())}
+            center={TextOrImage::Image(target.1.image[0])}
             corners={corners}
             on_select={on_select}
             fails={*fails}

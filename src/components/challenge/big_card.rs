@@ -28,7 +28,7 @@ pub fn BigCard(props: &Props) -> Html {
 
     html! {
         <div class="big-card" style={format!("background-image: url({})", bac)} onclick={let on_touch = on_touch.clone(); Callback::from(move |_| on_touch.emit(0))}>
-            <img style="width: 80vh; max-width: 100vw; height: 80vh; max-height: 100vw; background-color: #eee;" src={img} />
+            <img style="width: 80vh; max-width: 100vw; height: 80vh; max-height: 100vw; cursor: pointer; background-color: #eee;" src={img} />
             <span style="font-size: 4rem; text-shadow: 0 0 1.5rem white;">{word}</span>
         </div>
     }
