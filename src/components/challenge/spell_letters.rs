@@ -39,31 +39,28 @@ pub fn SpellLetters(props: &Props) -> Html {
     let letters_used = use_state(|| 0u64);
     let fails = use_state(|| 0u64);
 
-    use_effect_with_deps(
-        {
-            let chars = chars.clone();
-            let fill_state = fill_state.clone();
-            let randomized_letters = randomized_letters.clone();
-            let letters_used = letters_used.clone();
-            let extra_letters = *extra_letters;
-            let fails = fails.clone();
-            move |w: &&str| {
-                let mut chars_ = w.chars().collect::<Vec<_>>();
-                chars.set(chars_.clone());
-                for _ in 0..extra_letters {
-                    chars_.push(*EXTRA_LETTERS.choose(&mut thread_rng()).unwrap_or(&'a'))
-                }
-                // chars_.shuffle(&mut thread_rng());
-                chars_.sort();
-
-                letters_used.set(0);
-                fails.set(0);
-                fill_state.set(Vec::new());
-                randomized_letters.set(chars_);
+    use_effect_with(*word, {
+        let chars = chars.clone();
+        let fill_state = fill_state.clone();
+        let randomized_letters = randomized_letters.clone();
+        let letters_used = letters_used.clone();
+        let extra_letters = *extra_letters;
+        let fails = fails.clone();
+        move |w: &&str| {
+            let mut chars_ = w.chars().collect::<Vec<_>>();
+            chars.set(chars_.clone());
+            for _ in 0..extra_letters {
+                chars_.push(*EXTRA_LETTERS.choose(&mut thread_rng()).unwrap_or(&'a'))
             }
-        },
-        word,
-    );
+            // chars_.shuffle(&mut thread_rng());
+            chars_.sort();
+
+            letters_used.set(0);
+            fails.set(0);
+            fill_state.set(Vec::new());
+            randomized_letters.set(chars_);
+        }
+    });
 
     let img = get_img_url(data.image[0], ImageVariant::Full);
     let bac = get_img_url(data.image[0], ImageVariant::ThumbnailBackdrop);

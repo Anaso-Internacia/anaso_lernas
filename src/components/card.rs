@@ -13,14 +13,12 @@ pub struct Props {
 
 #[function_component]
 pub fn Card(props: &Props) -> Html {
-    let image_url: Rc<IString> = use_memo(
-        |id: &IString| get_img_url(id, ImageVariant::Thumbnail).into(),
-        props.image_id.clone(),
-    );
-    let backdrop_url: Rc<IString> = use_memo(
-        |id: &IString| get_img_url(id, ImageVariant::ThumbnailBackdrop).into(),
-        props.image_id.clone(),
-    );
+    let image_url: Rc<IString> = use_memo(props.image_id.clone(), |id: &IString| {
+        get_img_url(id, ImageVariant::Thumbnail).into()
+    });
+    let backdrop_url: Rc<IString> = use_memo(props.image_id.clone(), |id: &IString| {
+        get_img_url(id, ImageVariant::ThumbnailBackdrop).into()
+    });
 
     html! {
         <div class="card" style={format!("background-image: url(\"{}\");", backdrop_url)}>

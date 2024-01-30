@@ -12,6 +12,7 @@ use crate::{
     components::{
         challenge::Challenge,
         full_square::{FullSquare, TextOrImage},
+        select_language::SelectLanguage,
         vortaro::Vortaro,
     },
     get_img_url, ImageVariant, WordData, WordSet, DATA,
@@ -60,12 +61,13 @@ pub fn app() -> Html {
     ];
 
     html! {
-        <Challenge
-            target={target}
-            fakes={fakes}
-            on_success={let difficulty = difficulty.clone(); Callback::from(move |_| {difficulty.set(*difficulty + 1)})}
-            // difficulty={*difficulty % 6}
-            difficulty={3}
-        />
+        // <Challenge
+        //     target={target}
+        //     fakes={fakes}
+        //     on_success={let difficulty = difficulty.clone(); Callback::from(move |_| {difficulty.set(*difficulty + 1)})}
+        //     // difficulty={*difficulty % 6}
+        //     difficulty={3}
+        // />
+        <SelectLanguage />
     }
 }

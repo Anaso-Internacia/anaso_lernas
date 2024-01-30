@@ -28,15 +28,12 @@ pub fn SelectText(props: &Props) -> Html {
 
     let fails = use_state(|| [false; 4]);
 
-    use_effect_with_deps(
-        {
-            let fails = fails.clone();
-            move |_| {
-                fails.set([false; 4]);
-            }
-        },
-        (*target, *fakes),
-    );
+    use_effect_with((*target, *fakes), {
+        let fails = fails.clone();
+        move |_| {
+            fails.set([false; 4]);
+        }
+    });
 
     let (correct, full_sort) = use_shuffled_words(*target, *fakes);
 
