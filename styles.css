@@ -37,6 +37,8 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 
 .select-language h2 {
   font-size: 2rem;
+  box-shadow: 0 15px 16px -16px #1a18;
+  padding: 0.6rem;
 }
 
 
@@ -49,18 +51,34 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   width: 50vh;
 }
 
+
 .language-button > div {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: white;
-  padding: 1rem;
   border-radius: 1rem;
+  cursor: pointer;
+  padding-left: 1rem;
 }
 
 .language-button > div > img {
   height: 2rem;
   border: thin solid #eeee;
+}
+
+.language-button > div > .go {
+  background: #141;
+  color: white;
+  align-self: stretch;
+  padding: 1rem;
+  border-radius: 0px 1rem 1rem 0px;
+}
+
+.language-button > div > .go-placeholder {
+  background: transparent;
+  color: white;
+  padding: 1rem;
 }
 
 .border-text {
