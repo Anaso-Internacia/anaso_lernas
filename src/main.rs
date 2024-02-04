@@ -7,6 +7,7 @@ use crate::app::App;
 mod app;
 mod components;
 mod hooks;
+mod word_queue;
 
 #[derive(Clone, Debug, Deserialize)]
 struct WordData<'a> {
@@ -53,10 +54,10 @@ enum ImageVariant {
 impl ImageVariant {
     fn as_str(&self) -> &'static str {
         match self {
-            Self::FourFour => "AnasoLernas4x4",
-            Self::Thumbnail => "AnasoThumbnail",
-            Self::ThumbnailBackdrop => "AnasoThumbnailBackdrop",
-            Self::Full => "AnasoLernasFull",
+            Self::FourFour => "/w=300",
+            Self::Thumbnail => "/w=150",
+            Self::ThumbnailBackdrop => "/w=25,blur=8",
+            Self::Full => "/w=512",
         }
     }
 }
@@ -65,7 +66,6 @@ fn get_img_url(id: &str, variant: ImageVariant) -> String {
     [
         "https://imagedelivery.net/MRTPzGIpYfy00UVryjholQ/",
         id,
-        "/",
         variant.as_str(),
     ]
     .concat()

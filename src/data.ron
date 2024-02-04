@@ -1313,6 +1313,11 @@
     ),
     "oro": (
       image: ["692d9673-22ea-4a36-da26-7071a782f400"],
+      misses: [
+        "gildo",
+        "zoloto",
+        "aûro",
+      ]
     ),
     "ovo": (
       image: ["f002e91f-4c29-47aa-95d0-907d64f50d00"],

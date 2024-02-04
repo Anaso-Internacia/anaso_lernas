@@ -1,4 +1,7 @@
-use std::{collections::BTreeMap, rc::Rc};
+use std::{
+    collections::{BTreeMap, HashMap, VecDeque},
+    rc::Rc,
+};
 
 use implicit_clone::unsync::{IArray, IString};
 use rand::seq::{IteratorRandom, SliceRandom};
@@ -15,7 +18,9 @@ use crate::{
         select_language::SelectLanguage,
         vortaro::Vortaro,
     },
-    get_img_url, ImageVariant, WordData, WordSet, DATA,
+    get_img_url,
+    word_queue::{WordQueue, WordQueueContext},
+    ImageVariant, WordData, WordSet, DATA,
 };
 
 #[wasm_bindgen]
@@ -27,6 +32,11 @@ extern "C" {
 #[derive(Serialize, Deserialize)]
 struct GreetArgs<'a> {
     name: &'a str,
+}
+
+#[derive(Serialize, Deserialize)]
+struct PlayerWordStatus {
+    pub level: i32,
 }
 
 #[function_component(App)]
@@ -42,32 +52,18 @@ pub fn app() -> Html {
     // }
 
     let difficulty = use_state(|| 0);
+    let native_language = use_state(|| None::<&'static str>);
+    let word_queue = use_reducer(WordQueue::new);
 
-    let mut corner_words = DATA
-        .words
-        .iter()
-        .choose_multiple(&mut rand::thread_rng(), 4);
-
-    corner_words.shuffle(&mut rand::thread_rng());
-
-    let target = corner_words.pop().unwrap();
-    let target = WordSet(target.0, target.1);
-
-    let fakes: [_; 3] = corner_words.try_into().unwrap();
-    let fakes = [
-        WordSet(fakes[0].0, fakes[0].1),
-        WordSet(fakes[1].0, fakes[1].1),
-        WordSet(fakes[2].0, fakes[2].1),
-    ];
-
-    html! {
-        // <Challenge
-        //     target={target}
-        //     fakes={fakes}
-        //     on_success={let difficulty = difficulty.clone(); Callback::from(move |_| {difficulty.set(*difficulty + 1)})}
-        //     // difficulty={*difficulty % 6}
-        //     difficulty={3}
-        // />
-        <SelectLanguage />
+    if let Some(native_language) = *native_language {
+        html! {
+            <ContextProvider<WordQueueContext> context={word_queue}>
+                <Challenge />
+            </ContextProvider<WordQueueContext>>
+        }
+    } else {
+        html! {
+            <SelectLanguage on_selected={Callback::from(move |x| native_language.set(Some(x)))} />
+        }
     }
 }

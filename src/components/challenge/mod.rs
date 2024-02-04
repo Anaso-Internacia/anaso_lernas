@@ -1,6 +1,9 @@
 pub use yew::prelude::*;
 
-use crate::{WordData, WordSet};
+use crate::{
+    word_queue::{WordQueueAction, WordQueueContext},
+    WordData, WordSet, DATA,
+};
 
 use big_card::BigCard;
 use select_image::SelectImage;
@@ -13,23 +16,36 @@ mod select_text;
 mod spell_letters;
 
 #[derive(Properties, PartialEq)]
-pub struct Props {
-    pub target: WordSet,
-    pub fakes: [WordSet; 3],
-    pub difficulty: usize,
-    pub on_success: Callback<usize>,
-}
+pub struct Props {}
 
 #[function_component]
 pub fn Challenge(props: &Props) -> Html {
-    let Props {
-        target,
-        fakes,
-        difficulty,
-        on_success,
-    } = props;
+    let word_queue = use_context::<WordQueueContext>().unwrap();
 
-    let challenge = match difficulty {
+    let current = word_queue.current();
+    let fakes = word_queue.fakes();
+
+    let target = DATA.words.get(current.text).unwrap();
+    let target = &WordSet(current.text, target);
+
+    let fakes = &[
+        WordSet(fakes[0], DATA.words.get(fakes[0]).unwrap()),
+        WordSet(fakes[1], DATA.words.get(fakes[1]).unwrap()),
+        WordSet(fakes[2], DATA.words.get(fakes[2]).unwrap()),
+    ];
+
+    let on_success = Callback::from({
+        let word_queue = word_queue.clone();
+        let nonce = current.text;
+        move |a| {
+            word_queue.dispatch(WordQueueAction::Submit {
+                attempts: a as i32,
+                nonce,
+            });
+        }
+    });
+
+    let challenge = match current.level {
         0 => {
             // Just the image and the word
             html! {
@@ -71,6 +87,7 @@ pub fn Challenge(props: &Props) -> Html {
 
     html! {
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+            // <div>{word_queue.all_as_vec().iter().take(35).map(|x|html!{<div>{x.level.to_string()}{x.text}{"\u{a0}"}</div>}).collect::<Html>()}</div>
             {challenge}
         </div>
     }
