@@ -1,4 +1,4 @@
-use std::{collections::BTreeMap, ops::Deref};
+use std::collections::BTreeMap;
 
 use serde::Deserialize;
 
@@ -13,8 +13,8 @@ mod word_queue;
 struct WordData<'a> {
     #[serde(borrow)]
     pub image: Vec<&'a str>,
-    #[serde(borrow, default)]
-    pub alt: Vec<&'a str>,
+    // #[serde(borrow, default)]
+    // pub alt: Vec<&'a str>,
     #[serde(borrow, default)]
     pub misses: Vec<&'a str>,
 }
@@ -54,10 +54,10 @@ enum ImageVariant {
 impl ImageVariant {
     fn as_str(&self) -> &'static str {
         match self {
-            Self::FourFour => "/w=300",
+            Self::FourFour => "/w=400",
             Self::Thumbnail => "/w=150",
             Self::ThumbnailBackdrop => "/w=25,blur=8",
-            Self::Full => "/w=512",
+            Self::Full => "/w=400",
         }
     }
 }

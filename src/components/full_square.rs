@@ -2,7 +2,7 @@ use yew::prelude::*;
 
 use crate::{get_img_url, ImageVariant};
 
-#[derive(Debug, PartialEq, Hash)]
+#[derive(Clone, Debug, PartialEq, Hash)]
 pub enum TextOrImage {
     Text(AttrValue),
     Image(&'static str),
@@ -29,12 +29,17 @@ pub fn FullSquare(props: &Props) -> Html {
         .enumerate()
         .map(|(i, t)| match t {
             TextOrImage::Text(t) => {
+                let e = if fails[i] {
+                    "color: #f87171; transform: scale(0.9);"
+                } else {
+                    "color: black;"
+                };
                 html! {
                     <div
                         style="width: 50vmin; height: 50vmin; display: flex; justify-content: center; align-items: center;"
                         onclick={let on_select = on_select.clone(); move |_| on_select.emit(i)}
                     >
-                        <span style="font-size: 6vmin; cursor: pointer;">{t}</span>
+                        <span style={format!("font-size: 6vmin; cursor: pointer; font-weight: 700; {e}")}>{t}</span>
                     </div>
                 }
             }
@@ -59,7 +64,7 @@ pub fn FullSquare(props: &Props) -> Html {
     let (center, bg) = match center {
         TextOrImage::Text(t) => (
             html! {
-                <span style="color: black; font-size: 7vmin; font-weight: 600;" class="border-text">{t}</span>
+                <span style="color: black; font-size: 7vmin; font-weight: 700;" class="border-text">{t}</span>
             },
             String::new(),
         ),
