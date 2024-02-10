@@ -39,7 +39,7 @@ pub fn FullSquare(props: &Props) -> Html {
                         style="width: 50vmin; height: 50vmin; display: flex; justify-content: center; align-items: center;"
                         onclick={let on_select = on_select.clone(); move |_| on_select.emit(i)}
                     >
-                        <span style={format!("font-size: 6vmin; cursor: pointer; font-weight: 700; {e}")}>{t}</span>
+                        <span class="border-text" style={format!("z-index: 100; font-size: 6vmin; cursor: pointer; font-weight: 700; {e}")}>{t}</span>
                     </div>
                 }
             }
@@ -73,7 +73,7 @@ pub fn FullSquare(props: &Props) -> Html {
                 <img
                     key={*t}
                     src={get_img_url(t, ImageVariant::FourFour)}
-                    style="width: 40vmin; height: 40vmin;"
+                    style="width: 100vmin; max-width: 40vh; height: 100vmin; max-height: 40vh"
                 />
             },
             get_img_url(t, ImageVariant::ThumbnailBackdrop),
@@ -81,10 +81,12 @@ pub fn FullSquare(props: &Props) -> Html {
     };
 
     html! {
-        <div class="full-square" style={format!("background-image: url({})", bg)}>
-            {corners}
-            <div style="position: absolute; pointer-events: none; top: 0; bottom: 0; left: 0; right: 0; display: flex; justify-content: center; align-items: center;">
-                {center}
+        <div class="full-square-bg" style={format!("background-image: url({})", bg)}>
+            <div class="full-square">
+                {corners}
+                <div style="position: absolute; pointer-events: none; top: 0; bottom: 0; left: 0; right: 0; display: flex; justify-content: center; align-items: center;">
+                    {center}
+                </div>
             </div>
         </div>
     }

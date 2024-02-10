@@ -54,10 +54,10 @@ enum ImageVariant {
 impl ImageVariant {
     fn as_str(&self) -> &'static str {
         match self {
-            Self::FourFour => "/w=400",
+            Self::FourFour => "/w=1024",
             Self::Thumbnail => "/w=150",
             Self::ThumbnailBackdrop => "/w=25,blur=8",
-            Self::Full => "/w=400",
+            Self::Full => "/w=1024",
         }
     }
 }

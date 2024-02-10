@@ -139,15 +139,18 @@ impl WordQueue {
             let mut word_data = data.pop_front().unwrap();
             word_data.level = (word_data.level + 1 - mistakes).max(0);
             let pow = (word_data.level - mistakes).max(1).pow(2);
-            let new_position = thread_rng().gen_range((pow * 2)..(pow * 3));
+            let new_position = thread_rng().gen_range((pow * 2)..(pow * 3)).max(5);
             let len = data.len();
             data.insert((new_position as usize).min(len - 1), word_data);
             let others = data
                 .iter()
                 .skip(2)
+                .filter(|x| x.level > 0)
                 .choose_multiple(&mut thread_rng(), 3)
                 .iter()
                 .map(|x| x.text)
+                .chain(["pomo", "banano", "kivo"].into_iter().cycle())
+                .take(3)
                 .collect::<Vec<_>>()
                 .try_into()
                 .unwrap();
