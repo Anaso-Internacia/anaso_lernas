@@ -35,16 +35,31 @@ impl PartialEq for WordQueue {
 }
 
 impl WordQueue {
+    const STORAGE_KEY: &str = "word_queue";
+
     /// Create a new queue based on a word set
     pub fn new() -> Self {
-        let mut s = Self {
+        let s = Self::from_storage().unwrap_or_else(|| Self {
             data: RefCell::new(VecDeque::with_capacity(DATA.words.len())),
             three_others: Cell::new([""; 3]),
             next_others: Cell::new([""; 3]),
             stats: Cell::new(None),
-        };
+        });
         s.update_word_set();
         s
+    }
+
+    pub fn from_storage() -> Option<Self> {
+        let local_storage = web_sys::window()?.local_storage().ok()??;
+        let ron_data = local_storage.get_item(Self::STORAGE_KEY).ok()??;
+        let static_ron: &'static mut str = Box::leak(ron_data.into_boxed_str());
+        ron::from_str(static_ron).ok()
+    }
+
+    pub fn store(&self) -> Option<()> {
+        let ron_data = ron::to_string(self).unwrap();
+        let local_storage = web_sys::window().unwrap().local_storage().ok()??;
+        local_storage.set_item(Self::STORAGE_KEY, &ron_data).ok()
     }
 
     /// Update with current word set
@@ -134,30 +149,33 @@ impl WordQueue {
     ///
     /// `nonce` is the current word. This protects against double-submission.
     pub fn submit(&self, mistakes: i32, nonce: &str) {
-        let mut data = self.data.borrow_mut();
-        if data[0].text == nonce {
-            let mut word_data = data.pop_front().unwrap();
-            word_data.level = (word_data.level + 1 - mistakes).max(0);
-            let pow = (word_data.level - mistakes).max(1).pow(2);
-            let new_position = thread_rng().gen_range((pow * 2)..(pow * 3)).max(5);
-            let len = data.len();
-            data.insert((new_position as usize).min(len - 1), word_data);
-            let others = data
-                .iter()
-                .skip(2)
-                .filter(|x| x.level > 0)
-                .choose_multiple(&mut thread_rng(), 3)
-                .iter()
-                .map(|x| x.text)
-                .chain(["pomo", "banano", "kivo"].into_iter().cycle())
-                .take(3)
-                .collect::<Vec<_>>()
-                .try_into()
-                .unwrap();
-            self.three_others.set(self.next_others.get());
-            self.next_others.set(others);
+        {
+            let mut data = self.data.borrow_mut();
+            if data[0].text == nonce {
+                let mut word_data = data.pop_front().unwrap();
+                word_data.level = (word_data.level + 1 - mistakes).max(0);
+                let pow = (word_data.level - mistakes).max(1).pow(2);
+                let new_position = thread_rng().gen_range((pow * 2)..(pow * 3)).max(5);
+                let len = data.len();
+                data.insert((new_position as usize).min(len - 1), word_data);
+                let others = data
+                    .iter()
+                    .skip(2)
+                    .filter(|x| x.level > 0)
+                    .choose_multiple(&mut thread_rng(), 3)
+                    .iter()
+                    .map(|x| x.text)
+                    .chain(["pomo", "banano", "kivo"].into_iter().cycle())
+                    .take(3)
+                    .collect::<Vec<_>>()
+                    .try_into()
+                    .unwrap();
+                self.three_others.set(self.next_others.get());
+                self.next_others.set(others);
+            }
+            self.stats.set(None);
         }
-        self.stats.set(None);
+        self.store();
     }
 }
 
